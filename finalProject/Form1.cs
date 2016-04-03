@@ -13,6 +13,7 @@ namespace finalProject
    
     public partial class Form1 : Form
     {
+        private pDataSetTableAdapters.productsTableAdapter Adapter = new pDataSetTableAdapters.productsTableAdapter();
         int Lvote = 0;
         int DVote = 0;
         public Form1()
@@ -82,49 +83,73 @@ namespace finalProject
             
            
         }
+        private DateTime FormatDate(DateTime d)
+        {
+            DateTime dd = DateTime.Parse(d.Month + "/" + d.Day + "/" + d.Year);
+
+            return dd;
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'pDataSet.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.pDataSet.products);
+            //this.productsTableAdapter.Fill(this.pDataSet.products);
+             dgvProducts.DataSource   =Adapter.GetData();
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string price = txtPrice.Text;
-            string name = txtuName.Text;
-            string expDate = txtExpirationdate.Text;
+            int pId;
+            double price;
+            string name = txtName.Text;
+            DateTime d;
             string location = txtLocation.Text;
-            // string confirmPassword = txtConfirmpassword.Text;
-            // datas.name = userName;
-            //  datas.password = password;
+            if (!double.TryParse(txtPrice.Text, out price) || price < 0)
+            {
+                lblStatus.Text = " Invalid Price";
+                txtPrice.Focus();
+                return;
+            }
+            if (!int.TryParse(txtId.Text, out pId))
+            {
+                lblStatus.Text = " Invalid Id";
+                txtId.Focus();
+                return;
+            }
+            if (name == "")
+            {
 
+                lblStatus.Text = " Invalid product name.";
+                txtName.Focus();
+                return;
+            }
+            if (location == "")
+            {
 
-            if (price == "")
-            {
-                lblStatus.Text = " price can't be blank";
-                txtuPassword.Focus();
+                lblStatus.Text = " Invalid location";
+                txtLocation.Focus();
                 return;
             }
-            else if (name == "")
+            if (!DateTime.TryParse(dtpExpire.Text, out d) || FormatDate(d) < FormatDate(DateTime.Now))
             {
-                lblStatus.Text = "name can't be blank";
-                txtuName.Focus();
+                lblStatus.Text = " Invalid Expiration date";
+                dtpExpire.Focus();
                 return;
             }
-            else if (expDate == "")
-            {
-                lblStatus.Text = "expiration date can't be blank";
-                txtuName.Focus();
-                return;
+            try {
+                if (Adapter.Insert(pId, name, price, d, location) > 0)
+                {
+                    lblStatus.Text = "Succesfully Added";
+                }
             }
-            else if (location == "")
+            catch (Exception ex)
             {
-                lblStatus.Text = "location can't be blank";
-                txtuName.Focus();
-                return;
+                lblStatus.Text = " Adding Failed";
             }
+            dgvProducts.DataSource = Adapter.GetData();
+           // dgvProducts.DataSource = Adapter.Update((pId));
         }
     }
 }

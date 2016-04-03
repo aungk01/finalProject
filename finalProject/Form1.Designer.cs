@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gbRegister = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,34 +51,26 @@
             this.radioDislike = new System.Windows.Forms.RadioButton();
             this.radioLike = new System.Windows.Forms.RadioButton();
             this.gbProductreg = new System.Windows.Forms.GroupBox();
+            this.dtpExpire = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtLocation = new System.Windows.Forms.TextBox();
-            this.txtExpirationdate = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.pDataSet = new finalProject.pDataSet();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new finalProject.pDataSetTableAdapters.productsTableAdapter();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expirationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.storeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.gbRegister.SuspendLayout();
             this.gbLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.gbChoice.SuspendLayout();
             this.gbProductreg.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbRegister
@@ -196,15 +187,7 @@
             // 
             // dgvProducts
             // 
-            this.dgvProducts.AutoGenerateColumns = false;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIdDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.expirationDateDataGridViewTextBoxColumn,
-            this.storeDataGridViewTextBoxColumn});
-            this.dgvProducts.DataSource = this.productsBindingSource;
             this.dgvProducts.Location = new System.Drawing.Point(5, 27);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.Size = new System.Drawing.Size(361, 211);
@@ -301,6 +284,9 @@
             // 
             // gbProductreg
             // 
+            this.gbProductreg.Controls.Add(this.label9);
+            this.gbProductreg.Controls.Add(this.txtId);
+            this.gbProductreg.Controls.Add(this.dtpExpire);
             this.gbProductreg.Controls.Add(this.label8);
             this.gbProductreg.Controls.Add(this.label7);
             this.gbProductreg.Controls.Add(this.label2);
@@ -308,22 +294,76 @@
             this.gbProductreg.Controls.Add(this.btnSave);
             this.gbProductreg.Controls.Add(this.statusStrip1);
             this.gbProductreg.Controls.Add(this.txtLocation);
-            this.gbProductreg.Controls.Add(this.txtExpirationdate);
             this.gbProductreg.Controls.Add(this.txtPrice);
             this.gbProductreg.Controls.Add(this.txtName);
             this.gbProductreg.Location = new System.Drawing.Point(2, 279);
             this.gbProductreg.Name = "gbProductreg";
-            this.gbProductreg.Size = new System.Drawing.Size(361, 181);
+            this.gbProductreg.Size = new System.Drawing.Size(361, 191);
             this.gbProductreg.TabIndex = 10;
             this.gbProductreg.TabStop = false;
             this.gbProductreg.Text = "Product Registration";
+            // 
+            // dtpExpire
+            // 
+            this.dtpExpire.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpExpire.Location = new System.Drawing.Point(180, 78);
+            this.dtpExpire.Name = "dtpExpire";
+            this.dtpExpire.Size = new System.Drawing.Size(151, 20);
+            this.dtpExpire.TabIndex = 15;
+            this.dtpExpire.Value = new System.DateTime(2016, 4, 3, 15, 42, 48, 0);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(32, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Location";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Expiration Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Price";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Name";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(35, 140);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(296, 23);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 156);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 166);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(355, 22);
             this.statusStrip1.TabIndex = 9;
@@ -346,122 +386,41 @@
             this.txtLocation.Size = new System.Drawing.Size(151, 20);
             this.txtLocation.TabIndex = 8;
             // 
-            // txtExpirationdate
-            // 
-            this.txtExpirationdate.Location = new System.Drawing.Point(180, 78);
-            this.txtExpirationdate.Name = "txtExpirationdate";
-            this.txtExpirationdate.Size = new System.Drawing.Size(151, 20);
-            this.txtExpirationdate.TabIndex = 7;
-            // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(180, 49);
+            this.txtPrice.Location = new System.Drawing.Point(180, 54);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(151, 20);
             this.txtPrice.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(180, 24);
+            this.txtName.Location = new System.Drawing.Point(180, 31);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(151, 20);
             this.txtName.TabIndex = 5;
             // 
-            // pDataSet
+            // txtId
             // 
-            this.pDataSet.DataSetName = "pDataSet";
-            this.pDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.txtId.Location = new System.Drawing.Point(180, 9);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(151, 20);
+            this.txtId.TabIndex = 16;
             // 
-            // productsBindingSource
+            // label9
             // 
-            this.productsBindingSource.DataMember = "products";
-            this.productsBindingSource.DataSource = this.pDataSet;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "Product Id";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "Product Id";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // expirationDateDataGridViewTextBoxColumn
-            // 
-            this.expirationDateDataGridViewTextBoxColumn.DataPropertyName = "Expiration date";
-            this.expirationDateDataGridViewTextBoxColumn.HeaderText = "Expiration date";
-            this.expirationDateDataGridViewTextBoxColumn.Name = "expirationDateDataGridViewTextBoxColumn";
-            // 
-            // storeDataGridViewTextBoxColumn
-            // 
-            this.storeDataGridViewTextBoxColumn.DataPropertyName = "Store";
-            this.storeDataGridViewTextBoxColumn.HeaderText = "Store";
-            this.storeDataGridViewTextBoxColumn.Name = "storeDataGridViewTextBoxColumn";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(35, 130);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(296, 23);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Price";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Expiration Date";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 107);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Location";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(35, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Product Id";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 472);
+            this.ClientSize = new System.Drawing.Size(717, 533);
             this.Controls.Add(this.gbProductreg);
             this.Controls.Add(this.gbChoice);
             this.Controls.Add(this.btnLocation);
@@ -484,8 +443,6 @@
             this.gbProductreg.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -516,25 +473,19 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox gbProductreg;
         private System.Windows.Forms.TextBox txtLocation;
-        private System.Windows.Forms.TextBox txtExpirationdate;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private pDataSet pDataSet;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private pDataSetTableAdapters.productsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expirationDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn storeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpExpire;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 
