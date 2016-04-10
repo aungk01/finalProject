@@ -51,6 +51,11 @@
             this.radioDislike = new System.Windows.Forms.RadioButton();
             this.radioLike = new System.Windows.Forms.RadioButton();
             this.gbProductreg = new System.Windows.Forms.GroupBox();
+            this.radioDelete = new System.Windows.Forms.RadioButton();
+            this.radioEdit = new System.Windows.Forms.RadioButton();
+            this.radioAdd = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.dtpExpire = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,8 +68,6 @@
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.gbRegister.SuspendLayout();
             this.gbLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -188,14 +191,14 @@
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(5, 27);
+            this.dgvProducts.Location = new System.Drawing.Point(5, 4);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.Size = new System.Drawing.Size(361, 211);
+            this.dgvProducts.Size = new System.Drawing.Size(361, 216);
             this.dgvProducts.TabIndex = 2;
             // 
             // btnName
             // 
-            this.btnName.Location = new System.Drawing.Point(22, 250);
+            this.btnName.Location = new System.Drawing.Point(37, 226);
             this.btnName.Name = "btnName";
             this.btnName.Size = new System.Drawing.Size(75, 23);
             this.btnName.TabIndex = 3;
@@ -204,7 +207,7 @@
             // 
             // btnExpire
             // 
-            this.btnExpire.Location = new System.Drawing.Point(115, 250);
+            this.btnExpire.Location = new System.Drawing.Point(126, 226);
             this.btnExpire.Name = "btnExpire";
             this.btnExpire.Size = new System.Drawing.Size(75, 23);
             this.btnExpire.TabIndex = 7;
@@ -213,7 +216,7 @@
             // 
             // btnLocation
             // 
-            this.btnLocation.Location = new System.Drawing.Point(222, 250);
+            this.btnLocation.Location = new System.Drawing.Point(221, 226);
             this.btnLocation.Name = "btnLocation";
             this.btnLocation.Size = new System.Drawing.Size(75, 23);
             this.btnLocation.TabIndex = 8;
@@ -284,6 +287,9 @@
             // 
             // gbProductreg
             // 
+            this.gbProductreg.Controls.Add(this.radioDelete);
+            this.gbProductreg.Controls.Add(this.radioEdit);
+            this.gbProductreg.Controls.Add(this.radioAdd);
             this.gbProductreg.Controls.Add(this.label9);
             this.gbProductreg.Controls.Add(this.txtId);
             this.gbProductreg.Controls.Add(this.dtpExpire);
@@ -296,17 +302,66 @@
             this.gbProductreg.Controls.Add(this.txtLocation);
             this.gbProductreg.Controls.Add(this.txtPrice);
             this.gbProductreg.Controls.Add(this.txtName);
-            this.gbProductreg.Location = new System.Drawing.Point(2, 279);
+            this.gbProductreg.Location = new System.Drawing.Point(2, 255);
             this.gbProductreg.Name = "gbProductreg";
-            this.gbProductreg.Size = new System.Drawing.Size(361, 191);
+            this.gbProductreg.Size = new System.Drawing.Size(361, 248);
             this.gbProductreg.TabIndex = 10;
             this.gbProductreg.TabStop = false;
             this.gbProductreg.Text = "Product Registration";
             // 
+            // radioDelete
+            // 
+            this.radioDelete.AutoSize = true;
+            this.radioDelete.Location = new System.Drawing.Point(228, 19);
+            this.radioDelete.Name = "radioDelete";
+            this.radioDelete.Size = new System.Drawing.Size(56, 17);
+            this.radioDelete.TabIndex = 20;
+            this.radioDelete.Text = "Delete";
+            this.radioDelete.UseVisualStyleBackColor = true;
+            // 
+            // radioEdit
+            // 
+            this.radioEdit.AutoSize = true;
+            this.radioEdit.Location = new System.Drawing.Point(126, 19);
+            this.radioEdit.Name = "radioEdit";
+            this.radioEdit.Size = new System.Drawing.Size(43, 17);
+            this.radioEdit.TabIndex = 19;
+            this.radioEdit.Text = "Edit";
+            this.radioEdit.UseVisualStyleBackColor = true;
+            // 
+            // radioAdd
+            // 
+            this.radioAdd.AutoSize = true;
+            this.radioAdd.Checked = true;
+            this.radioAdd.Location = new System.Drawing.Point(35, 19);
+            this.radioAdd.Name = "radioAdd";
+            this.radioAdd.Size = new System.Drawing.Size(44, 17);
+            this.radioAdd.TabIndex = 18;
+            this.radioAdd.TabStop = true;
+            this.radioAdd.Text = "Add";
+            this.radioAdd.UseVisualStyleBackColor = true;
+            this.radioAdd.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(56, 49);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Product Id";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(180, 49);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(151, 20);
+            this.txtId.TabIndex = 16;
+            // 
             // dtpExpire
             // 
             this.dtpExpire.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpExpire.Location = new System.Drawing.Point(180, 78);
+            this.dtpExpire.Location = new System.Drawing.Point(180, 137);
             this.dtpExpire.Name = "dtpExpire";
             this.dtpExpire.Size = new System.Drawing.Size(151, 20);
             this.dtpExpire.TabIndex = 15;
@@ -315,7 +370,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 114);
+            this.label8.Location = new System.Drawing.Point(52, 171);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 13);
             this.label8.TabIndex = 14;
@@ -324,7 +379,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 84);
+            this.label7.Location = new System.Drawing.Point(52, 137);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 13;
@@ -333,7 +388,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 53);
+            this.label2.Location = new System.Drawing.Point(56, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 12;
@@ -342,7 +397,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 31);
+            this.label1.Location = new System.Drawing.Point(56, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 11;
@@ -350,7 +405,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(35, 140);
+            this.btnSave.Location = new System.Drawing.Point(35, 197);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(296, 23);
             this.btnSave.TabIndex = 10;
@@ -363,7 +418,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 166);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 223);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(355, 22);
             this.statusStrip1.TabIndex = 9;
@@ -381,40 +436,24 @@
             // 
             // txtLocation
             // 
-            this.txtLocation.Location = new System.Drawing.Point(180, 107);
+            this.txtLocation.Location = new System.Drawing.Point(180, 171);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(151, 20);
             this.txtLocation.TabIndex = 8;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(180, 54);
+            this.txtPrice.Location = new System.Drawing.Point(180, 104);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(151, 20);
             this.txtPrice.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(180, 31);
+            this.txtName.Location = new System.Drawing.Point(180, 78);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(151, 20);
             this.txtName.TabIndex = 5;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(180, 9);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(151, 20);
-            this.txtId.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Product Id";
             // 
             // Form1
             // 
@@ -486,6 +525,9 @@
         private System.Windows.Forms.DateTimePicker dtpExpire;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.RadioButton radioDelete;
+        private System.Windows.Forms.RadioButton radioEdit;
+        private System.Windows.Forms.RadioButton radioAdd;
     }
 }
 
