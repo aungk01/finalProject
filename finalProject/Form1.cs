@@ -21,53 +21,7 @@ namespace finalProject
             InitializeComponent();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            string password = txtPassword.Text;
-            string userName = txtUserName.Text;
-           // string confirmPassword = txtConfirmpassword.Text;
-           // datas.name = userName;
-          //  datas.password = password;
-
-
-            if ( password == "")
-            {
-                lblStatus.Text = " User password can't be blank";
-                txtPassword.Focus();
-                return;
-            }
-            if (userName == "")
-            {
-                lblStatus.Text = " User name can't be blank";
-                txtUserName.Focus();
-                return;
-            }
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            string password = txtuPassword.Text;
-            string userName = txtuName.Text;
-            // string confirmPassword = txtConfirmpassword.Text;
-            // datas.name = userName;
-            //  datas.password = password;
-
-
-            if (password == "")
-            {
-                lblStatus.Text = " User password can't be blank";
-                txtuPassword.Focus();
-                return;
-            }
-            if (userName == "")
-            {
-                lblStatus.Text = " User name can't be blank";
-                txtuName.Focus();
-                return;
-            }
-
-        }
-
+       
         private void btnVote_Click(object sender, EventArgs e)
         {
             
@@ -217,7 +171,7 @@ namespace finalProject
         }
 
        
-       private void radioButton_CheckedChanged(object sender, EventArgs e)
+       private void Button_CheckedChanged(object sender, EventArgs e)
         {
             if (radioAdd.Checked)
             {
@@ -243,6 +197,10 @@ namespace finalProject
             
         }
 
-    
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            registrationForm rG = new registrationForm ();
+            rG.Show();
+        }
     }
 }

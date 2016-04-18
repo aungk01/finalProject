@@ -28,18 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbRegister = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.gbLogin = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.txtuPassword = new System.Windows.Forms.TextBox();
-            this.txtuName = new System.Windows.Forms.TextBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btnName = new System.Windows.Forms.Button();
             this.btnExpire = new System.Windows.Forms.Button();
@@ -68,132 +56,19 @@
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.gbRegister.SuspendLayout();
-            this.gbLogin.SuspendLayout();
+            this.btnLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.gbChoice.SuspendLayout();
             this.gbProductreg.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbRegister
-            // 
-            this.gbRegister.Controls.Add(this.label4);
-            this.gbRegister.Controls.Add(this.label3);
-            this.gbRegister.Controls.Add(this.txtPassword);
-            this.gbRegister.Controls.Add(this.txtUserName);
-            this.gbRegister.Controls.Add(this.btnRegister);
-            this.gbRegister.Location = new System.Drawing.Point(369, 27);
-            this.gbRegister.Name = "gbRegister";
-            this.gbRegister.Size = new System.Drawing.Size(198, 100);
-            this.gbRegister.TabIndex = 0;
-            this.gbRegister.TabStop = false;
-            this.gbRegister.Text = "Register";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Password";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Name";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(98, 45);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(54, 20);
-            this.txtPassword.TabIndex = 2;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(98, 19);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(54, 20);
-            this.txtUserName.TabIndex = 1;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(43, 71);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 0;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // gbLogin
-            // 
-            this.gbLogin.Controls.Add(this.label6);
-            this.gbLogin.Controls.Add(this.label5);
-            this.gbLogin.Controls.Add(this.btnLogin);
-            this.gbLogin.Controls.Add(this.txtuPassword);
-            this.gbLogin.Controls.Add(this.txtuName);
-            this.gbLogin.Location = new System.Drawing.Point(369, 133);
-            this.gbLogin.Name = "gbLogin";
-            this.gbLogin.Size = new System.Drawing.Size(198, 105);
-            this.gbLogin.TabIndex = 1;
-            this.gbLogin.TabStop = false;
-            this.gbLogin.Text = "User Login";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Password";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Name";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(43, 77);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // txtuPassword
-            // 
-            this.txtuPassword.Location = new System.Drawing.Point(85, 51);
-            this.txtuPassword.Name = "txtuPassword";
-            this.txtuPassword.Size = new System.Drawing.Size(73, 20);
-            this.txtuPassword.TabIndex = 2;
-            // 
-            // txtuName
-            // 
-            this.txtuName.Location = new System.Drawing.Point(85, 18);
-            this.txtuName.Name = "txtuName";
-            this.txtuName.Size = new System.Drawing.Size(73, 20);
-            this.txtuName.TabIndex = 1;
-            // 
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(5, 4);
+            this.dgvProducts.Location = new System.Drawing.Point(-93, 4);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.Size = new System.Drawing.Size(361, 216);
+            this.dgvProducts.Size = new System.Drawing.Size(638, 216);
             this.dgvProducts.TabIndex = 2;
             // 
             // btnName
@@ -207,7 +82,7 @@
             // 
             // btnExpire
             // 
-            this.btnExpire.Location = new System.Drawing.Point(126, 226);
+            this.btnExpire.Location = new System.Drawing.Point(163, 226);
             this.btnExpire.Name = "btnExpire";
             this.btnExpire.Size = new System.Drawing.Size(75, 23);
             this.btnExpire.TabIndex = 7;
@@ -216,7 +91,7 @@
             // 
             // btnLocation
             // 
-            this.btnLocation.Location = new System.Drawing.Point(221, 226);
+            this.btnLocation.Location = new System.Drawing.Point(273, 226);
             this.btnLocation.Name = "btnLocation";
             this.btnLocation.Size = new System.Drawing.Size(75, 23);
             this.btnLocation.TabIndex = 8;
@@ -230,9 +105,9 @@
             this.gbChoice.Controls.Add(this.btnVote);
             this.gbChoice.Controls.Add(this.radioDislike);
             this.gbChoice.Controls.Add(this.radioLike);
-            this.gbChoice.Location = new System.Drawing.Point(369, 279);
+            this.gbChoice.Location = new System.Drawing.Point(369, 362);
             this.gbChoice.Name = "gbChoice";
-            this.gbChoice.Size = new System.Drawing.Size(198, 181);
+            this.gbChoice.Size = new System.Drawing.Size(176, 138);
             this.gbChoice.TabIndex = 9;
             this.gbChoice.TabStop = false;
             this.gbChoice.Text = "Opinion";
@@ -318,6 +193,7 @@
             this.radioDelete.TabIndex = 20;
             this.radioDelete.Text = "Delete";
             this.radioDelete.UseVisualStyleBackColor = true;
+            this.radioDelete.CheckedChanged += new System.EventHandler(this.Button_CheckedChanged);
             // 
             // radioEdit
             // 
@@ -328,6 +204,7 @@
             this.radioEdit.TabIndex = 19;
             this.radioEdit.Text = "Edit";
             this.radioEdit.UseVisualStyleBackColor = true;
+            this.radioEdit.CheckedChanged += new System.EventHandler(this.Button_CheckedChanged);
             // 
             // radioAdd
             // 
@@ -340,7 +217,7 @@
             this.radioAdd.TabStop = true;
             this.radioAdd.Text = "Add";
             this.radioAdd.UseVisualStyleBackColor = true;
-            this.radioAdd.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.radioAdd.CheckedChanged += new System.EventHandler(this.Button_CheckedChanged);
             // 
             // label9
             // 
@@ -455,26 +332,32 @@
             this.txtName.Size = new System.Drawing.Size(151, 20);
             this.txtName.TabIndex = 5;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(370, 319);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(165, 23);
+            this.btnLogin.TabIndex = 11;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 533);
+            this.ClientSize = new System.Drawing.Size(547, 533);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.gbProductreg);
             this.Controls.Add(this.gbChoice);
             this.Controls.Add(this.btnLocation);
             this.Controls.Add(this.btnExpire);
             this.Controls.Add(this.btnName);
             this.Controls.Add(this.dgvProducts);
-            this.Controls.Add(this.gbLogin);
-            this.Controls.Add(this.gbRegister);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.gbRegister.ResumeLayout(false);
-            this.gbRegister.PerformLayout();
-            this.gbLogin.ResumeLayout(false);
-            this.gbLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.gbChoice.ResumeLayout(false);
             this.gbChoice.PerformLayout();
@@ -487,15 +370,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gbRegister;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.GroupBox gbLogin;
-        private System.Windows.Forms.TextBox txtuPassword;
-        private System.Windows.Forms.TextBox txtuName;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Button btnName;
         private System.Windows.Forms.Button btnExpire;
@@ -506,10 +380,6 @@
         private System.Windows.Forms.Button btnVote;
         private System.Windows.Forms.RadioButton radioDislike;
         private System.Windows.Forms.RadioButton radioLike;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox gbProductreg;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.TextBox txtPrice;
@@ -528,6 +398,7 @@
         private System.Windows.Forms.RadioButton radioDelete;
         private System.Windows.Forms.RadioButton radioEdit;
         private System.Windows.Forms.RadioButton radioAdd;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 
