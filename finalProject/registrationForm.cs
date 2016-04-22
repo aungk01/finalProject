@@ -12,41 +12,49 @@ namespace finalProject
 {
     public partial class registrationForm : Form
     {
+        customerDataSetTableAdapters.CustomerTableAdapter loginAdapter = new customerDataSetTableAdapters.CustomerTableAdapter();
         public registrationForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        private void btnRegister_Click(object sender, EventArgs e)
         {
+            System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+            string uName = txtUsername.Text;
+            int pWord;
             errorProvider1.Clear();
-            string userName = txtUsername.Text;
-            string passWord = txtPassword.Text;
-            if (userName == "")
+            if (uName == "" || !rEmail.IsMatch(uName.Trim()))
             {
 
-                lblStatus.Text = " Invalid user name.";
-                errorProvider1.SetError(txtUsername, "Invalid Passoword.");
+
+                errorProvider1.SetError(txtUsername, " Invalid username");
                 return;
-
             }
-            else if (passWord == "")
+
+            if (!int.TryParse(txtPassword.Text, out pWord))
             {
-                if (userName == "")
-                {
 
-                    lblStatus.Text = " Invalid password.";
-                    errorProvider1.SetError(txtUsername, "Invalid Passoword.");
-                    return;
-
-                }
-               
-                txtUsername.Clear();
-                txtPassword.Clear();
-                Form1 FormOne = new Form1();
-                
-
+                errorProvider1.SetError(txtPassword, " Invalid password");
+                return;
             }
+
+            try
+            {
+                loginAdapter.Insert(uName, pWord);
+                lblStatus.Text = "New login added";
+            }
+            catch
+            {
+                lblStatus.Text = "Error creating new login";
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

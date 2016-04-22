@@ -200,7 +200,12 @@ namespace finalProject
         private void btnLogin_Click(object sender, EventArgs e)
         {
             registrationForm rG = new registrationForm ();
-            rG.Show();
+                         rG.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

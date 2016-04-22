@@ -61,6 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +103,17 @@
     <EmbeddedResource Include="registrationForm.resx">
       <DependentUpon>registrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="customerDataSet.xsc">
+      <DependentUpon>customerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="customerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDataSet.xss">
+      <DependentUpon>customerDataSet.xsd</DependentUpon>
+    </None>
     <None Include="pDataSet.xsc">
       <DependentUpon>pDataSet.xsd</DependentUpon>
     </None>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btnName = new System.Windows.Forms.Button();
             this.btnExpire = new System.Windows.Forms.Button();
@@ -57,18 +58,28 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnExit = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnEdit = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.cboProducts = new System.Windows.Forms.ToolStripComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.gbChoice.SuspendLayout();
             this.gbProductreg.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(-93, 4);
+            this.dgvProducts.Location = new System.Drawing.Point(2, 39);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.Size = new System.Drawing.Size(638, 216);
+            this.dgvProducts.Size = new System.Drawing.Size(543, 181);
             this.dgvProducts.TabIndex = 2;
             // 
             // btnName
@@ -338,15 +349,87 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(165, 23);
             this.btnLogin.TabIndex = 11;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Register";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnExit,
+            this.toolStripSeparator1,
+            this.btnEdit,
+            this.toolStripSeparator2,
+            this.toolStripLabel1,
+            this.toolStripSeparator3,
+            this.cboProducts});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(547, 25);
+            this.toolStrip1.TabIndex = 12;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnExit
+            // 
+            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(29, 22);
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(31, 22);
+            this.btnEdit.Text = "Edit";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(50, 22);
+            this.toolStripLabel1.Text = "ShowAll";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // cboProducts
+            // 
+            this.cboProducts.Name = "cboProducts";
+            this.cboProducts.Size = new System.Drawing.Size(121, 25);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(370, 286);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Member Login";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 533);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.gbProductreg);
             this.Controls.Add(this.gbChoice);
@@ -356,7 +439,7 @@
             this.Controls.Add(this.dgvProducts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Grocessary Deals";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.gbChoice.ResumeLayout(false);
@@ -365,7 +448,10 @@
             this.gbProductreg.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -399,6 +485,15 @@
         private System.Windows.Forms.RadioButton radioEdit;
         private System.Windows.Forms.RadioButton radioAdd;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnExit;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnEdit;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripComboBox cboProducts;
+        private System.Windows.Forms.Button button1;
     }
 }
 
