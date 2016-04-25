@@ -834,12 +834,10 @@ namespace finalProject.pDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Product Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO products
-                         ([Product Id], Name, Price, [Expiration date], Store)
-VALUES        (@Product_Id,@Name,@Price,@Expiration_date,@Store);  
-SELECT [Product Id], Name, Price, [Expiration date], Store FROM products WHERE ([Product Id] = @Product_Id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO products\r\n  (Name, Price, [Expiration date], Store)\r\nVALUES   (@Name," +
+                "@Price,@Expiration_date,@Store);     Select  [Product Id], Name, Price, \r[Expira" +
+                "tion date], Store FROM products WHERE ([Product Id ]= SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Product Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expiration_date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Expiration date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -848,7 +846,7 @@ SELECT [Product Id], Name, Price, [Expiration date], Store FROM products WHERE (
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE       products
 SET                Name = @Name, Price = @Price, [Expiration date] = @Expiration_date, Store = @Store
-WHERE        ([Product Id] = @Product_Id); 
+WHERE        ([Product Id] = @Product_Id);     
 SELECT [Product Id], Name, Price, [Expiration date], Store FROM products WHERE ([Product Id] = @Product_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -954,21 +952,20 @@ SELECT [Product Id], Name, Price, [Expiration date], Store FROM products WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Product_Id, string Name, double Price, System.DateTime Expiration_date, string Store) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Product_Id));
+        public virtual int Insert(string Name, double Price, System.DateTime Expiration_date, string Store) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Name));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((double)(Price));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Expiration_date));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((double)(Price));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Expiration_date));
             if ((Store == null)) {
                 throw new global::System.ArgumentNullException("Store");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Store));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Store));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

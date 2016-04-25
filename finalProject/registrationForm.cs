@@ -13,6 +13,8 @@ namespace finalProject
     public partial class registrationForm : Form
     {
         customerDataSetTableAdapters.CustomerTableAdapter loginAdapter = new customerDataSetTableAdapters.CustomerTableAdapter();
+        List<Logins> login = new List<Logins>();
+        Logins click;
         public registrationForm()
         {
             InitializeComponent();
@@ -41,10 +43,14 @@ namespace finalProject
                 return;
             }
 
+            click = new Logins(uName, pWord);
+
             try
             {
-                loginAdapter.Insert(uName, pWord);
+                loginAdapter.Insert( click.Username,click.passWord);
                 lblStatus.Text = "New login added";
+                LoginTable lTable = new LoginTable();
+                lTable.Show();
             }
             catch
             {
