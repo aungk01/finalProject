@@ -91,6 +91,13 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GrocessaryItems.cs" />
+    <Compile Include="liquorSales.cs" />
+    <Compile Include="liquorsalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="liquorsalesForm.Designer.cs">
+      <DependentUpon>liquorsalesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logins.cs" />
     <Compile Include="LoginTable.cs">
       <SubType>Form</SubType>
@@ -120,6 +127,8 @@
     <Compile Include="registrationForm.Designer.cs">
       <DependentUpon>registrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Whisky.cs" />
+    <Compile Include="Wine.cs" />
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="liquorsalesForm.resx">
+      <DependentUpon>liquorsalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginTable.resx">
       <DependentUpon>LoginTable.cs</DependentUpon>
@@ -146,6 +158,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="registrationForm.resx">
       <DependentUpon>registrationForm.cs</DependentUpon>
@@ -200,6 +213,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>product.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\thumbs-up3.jpg" />
+    <None Include="Resources\thumbs-up2.jpg" />
+    <None Include="Resources\thumbs-up.jpg" />
+    <None Include="Resources\thumbs-up1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

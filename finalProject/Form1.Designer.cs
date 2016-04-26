@@ -38,10 +38,8 @@
             this.lblLIkecount = new System.Windows.Forms.Label();
             this.btnVote = new System.Windows.Forms.Button();
             this.radioDislike = new System.Windows.Forms.RadioButton();
-            this.radioLike = new System.Windows.Forms.RadioButton();
             this.gbProductreg = new System.Windows.Forms.GroupBox();
             this.radioDelete = new System.Windows.Forms.RadioButton();
-            this.radioEdit = new System.Windows.Forms.RadioButton();
             this.radioAdd = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -57,20 +55,20 @@
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.cboProducts = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.button1 = new System.Windows.Forms.Button();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnLiquorSales = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.ToolStripButton();
+            this.btnEdit = new System.Windows.Forms.ToolStripButton();
+            this.btnAdd = new System.Windows.Forms.ToolStripButton();
+            this.radioLike = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.gbChoice.SuspendLayout();
             this.gbProductreg.SuspendLayout();
@@ -145,7 +143,7 @@
             // 
             // btnVote
             // 
-            this.btnVote.Location = new System.Drawing.Point(43, 85);
+            this.btnVote.Location = new System.Drawing.Point(43, 109);
             this.btnVote.Name = "btnVote";
             this.btnVote.Size = new System.Drawing.Size(75, 23);
             this.btnVote.TabIndex = 2;
@@ -156,29 +154,16 @@
             // radioDislike
             // 
             this.radioDislike.AutoSize = true;
-            this.radioDislike.Location = new System.Drawing.Point(16, 51);
+            this.radioDislike.Location = new System.Drawing.Point(16, 53);
             this.radioDislike.Name = "radioDislike";
             this.radioDislike.Size = new System.Drawing.Size(56, 17);
             this.radioDislike.TabIndex = 1;
             this.radioDislike.Text = "Dislike";
             this.radioDislike.UseVisualStyleBackColor = true;
             // 
-            // radioLike
-            // 
-            this.radioLike.AutoSize = true;
-            this.radioLike.Checked = true;
-            this.radioLike.Location = new System.Drawing.Point(16, 25);
-            this.radioLike.Name = "radioLike";
-            this.radioLike.Size = new System.Drawing.Size(45, 17);
-            this.radioLike.TabIndex = 0;
-            this.radioLike.TabStop = true;
-            this.radioLike.Text = "Like";
-            this.radioLike.UseVisualStyleBackColor = true;
-            // 
             // gbProductreg
             // 
             this.gbProductreg.Controls.Add(this.radioDelete);
-            this.gbProductreg.Controls.Add(this.radioEdit);
             this.gbProductreg.Controls.Add(this.radioAdd);
             this.gbProductreg.Controls.Add(this.label9);
             this.gbProductreg.Controls.Add(this.txtId);
@@ -202,7 +187,7 @@
             // radioDelete
             // 
             this.radioDelete.AutoSize = true;
-            this.radioDelete.Location = new System.Drawing.Point(228, 19);
+            this.radioDelete.Location = new System.Drawing.Point(180, 19);
             this.radioDelete.Name = "radioDelete";
             this.radioDelete.Size = new System.Drawing.Size(56, 17);
             this.radioDelete.TabIndex = 20;
@@ -210,22 +195,11 @@
             this.radioDelete.UseVisualStyleBackColor = true;
             this.radioDelete.CheckedChanged += new System.EventHandler(this.Button_CheckedChanged);
             // 
-            // radioEdit
-            // 
-            this.radioEdit.AutoSize = true;
-            this.radioEdit.Location = new System.Drawing.Point(126, 19);
-            this.radioEdit.Name = "radioEdit";
-            this.radioEdit.Size = new System.Drawing.Size(43, 17);
-            this.radioEdit.TabIndex = 19;
-            this.radioEdit.Text = "Edit";
-            this.radioEdit.UseVisualStyleBackColor = true;
-            this.radioEdit.CheckedChanged += new System.EventHandler(this.Button_CheckedChanged);
-            // 
             // radioAdd
             // 
             this.radioAdd.AutoSize = true;
             this.radioAdd.Checked = true;
-            this.radioAdd.Location = new System.Drawing.Point(35, 19);
+            this.radioAdd.Location = new System.Drawing.Point(55, 19);
             this.radioAdd.Name = "radioAdd";
             this.radioAdd.Size = new System.Drawing.Size(44, 17);
             this.radioAdd.TabIndex = 18;
@@ -347,16 +321,6 @@
             this.txtName.Size = new System.Drawing.Size(151, 20);
             this.txtName.TabIndex = 5;
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(370, 319);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(165, 23);
-            this.btnLogin.TabIndex = 11;
-            this.btnLogin.Text = "Register";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -377,30 +341,10 @@
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnExit
-            // 
-            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(29, 22);
-            this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(31, 22);
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // toolStripSeparator2
             // 
@@ -430,6 +374,46 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnLiquorSales
+            // 
+            this.btnLiquorSales.Location = new System.Drawing.Point(370, 286);
+            this.btnLiquorSales.Name = "btnLiquorSales";
+            this.btnLiquorSales.Size = new System.Drawing.Size(165, 23);
+            this.btnLiquorSales.TabIndex = 13;
+            this.btnLiquorSales.Text = "Today Only Liquor Sales";
+            this.btnLiquorSales.UseVisualStyleBackColor = true;
+            this.btnLiquorSales.Click += new System.EventHandler(this.btnLiquorSales_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(29, 22);
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(31, 22);
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -440,33 +424,25 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // toolStripSeparator5
+            // radioLike
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(370, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Member Login";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            this.radioLike.AutoSize = true;
+            this.radioLike.Checked = true;
+            this.radioLike.Location = new System.Drawing.Point(16, 25);
+            this.radioLike.Name = "radioLike";
+            this.radioLike.Size = new System.Drawing.Size(45, 17);
+            this.radioLike.TabIndex = 0;
+            this.radioLike.TabStop = true;
+            this.radioLike.Text = "Like";
+            this.radioLike.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 533);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLiquorSales);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.gbProductreg);
             this.Controls.Add(this.gbChoice);
             this.Controls.Add(this.btnLocation);
@@ -518,9 +494,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.RadioButton radioDelete;
-        private System.Windows.Forms.RadioButton radioEdit;
         private System.Windows.Forms.RadioButton radioAdd;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnExit;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -529,7 +503,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripComboBox cboProducts;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLiquorSales;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btnAdd;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;

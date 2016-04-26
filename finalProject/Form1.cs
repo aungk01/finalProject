@@ -120,73 +120,11 @@ namespace finalProject
                 {
                     lblStatus.Text = " Adding Failed";
                 }
-            }
-
-            else if (radioEdit.Checked)
-            {
-
-                int pId=0;
-                double price;
-                lblStatus.Text = "";
-                string name = txtName.Text;
-                DateTime d;
-                string location = txtLocation.Text;
-                
-                //if (!int.TryParse(txtId.Text, out pId))
-                //{
-                //    lblStatus.Text = " Invalid Id";
-                //    txtId.Focus();
-                //    return;
-                //}
-                if (!double.TryParse(txtPrice.Text, out price) || price < 0)
-                {
-                    lblStatus.Text = " Invalid Price";
-                    txtPrice.Focus();
-                    return;
-                }
-                if (name == "")
-                {
-
-                    lblStatus.Text = " Invalid product name.";
-                    txtName.Focus();
-                    return;
-                }
-                if (location == "")
-                {
-
-                    lblStatus.Text = " Invalid location";
-                    txtLocation.Focus();
-                    return;
-                }
-                if (!DateTime.TryParse(dtpExpire.Text, out d) || FormatDate(d) < FormatDate(DateTime.Now))
-                {
-                    lblStatus.Text = " Invalid Expiration date";
-                    dtpExpire.Focus();
-                    return;
-                }
-                try
-                { 
-                  if (dgvProducts.SelectedRows.Count > 0)
-                     {
-                        int Id = (int)(dgvProducts.SelectedRows[0].Cells[0].Value);
-                        
-                        Adapter.Update(name, price, d, location, pId);
-                        UpdateForm();
-                     }
-                    else
-                    {
-                        lblStatus.Text = "Click on a name to select an employee.";
-                        return;
-                    }
-                }
-                catch
-                {
-                    lblStatus.Text = "Error loading product information.";
-                }
-
-               
 
             }
+
+          
+            
             else if (radioDelete.Checked)
             {
                 int pId;
@@ -197,11 +135,39 @@ namespace finalProject
                     txtId.Focus();
                     return;
                 }
-               
-                Adapter.Delete(pId);
-                lblStatus.Text = "Item Deleted";
+               if (dgvProducts.SelectedRows.Count> 0)
+                {
+                    DialogResult r = MessageBox.Show("Deleting the selected product will permanently remove. Do you loke to proceed?"
+                        , "Confirm Delete", MessageBoxButtons.YesNo);
+                    if(r == DialogResult.Yes)
+                    {
+                        int selectedId = (int)dgvProducts.SelectedRows[0].Cells[0].Value;
+
+                        if (Adapter.Delete(selectedId) > 0)
+                        {
+                            dgvProducts.DataSource = Adapter.GetData();
+                            formLoading = true;
+                            UpdateForm();
+                            lblStatus.Text= "Product deleted";
+                            txtId.Text = "";
+                        }
+
+                        else
+                        {
+                            lblStatus.Text = "Error Deleting this product";
+                            txtId.Text = "";
+                        }
+
+                    }
+                }
+                
             }
-            dgvProducts.DataSource = Adapter.GetData();
+            else
+            {
+                lblStatus.Text = " No product Deleted";
+                txtId.Text = "";
+            }
+           // dgvProducts.DataSource = Adapter.GetData();
            // dgvProducts.DataSource = Adapter.Update((pId));
         }
 
@@ -224,21 +190,11 @@ namespace finalProject
                 txtLocation.Enabled = false;
                 dtpExpire.Enabled = false;
             }
-            else if (radioEdit.Checked)
-            {
-               
-                txtId.Enabled = false;
-            }
+           
             
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            registrationForm rG = new registrationForm ();
-                         rG.Show();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
+       private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -289,6 +245,12 @@ namespace finalProject
                 lblStatus.Text = "Click on a name to select an employee.";
                 return;
             }
+        }
+
+        private void btnLiquorSales_Click(object sender, EventArgs e)
+        {
+            liquorsalesForm lSales = new liquorsalesForm();
+            lSales.Show();
         }
     }
 }
